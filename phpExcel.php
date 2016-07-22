@@ -1,60 +1,59 @@
 <?php
 /**
-  用的是tinkphp Onethink
-例子：
-		$info['set_sheet_name'] = array('模板','填表说明');
-		$info['set_aligncenter'][0] = array('A1','B1','C1','D1','E1','F1');
-		$info['set_fontcolor'][0] = array('A1','F1');
-		$info['set_BorderStyle'][0] = 'A1:F20';
-		$info['set_width'][0] = array(
-			'A'=>'20',
-			'B'=>'20',
-			'C'=>'20',
-			'D'=>'20',
-			'E'=>'20',
-			'F'=>'20',
-		);
+* 用的是tinkphp Onethink
+* 例子：
+* $info['set_sheet_name'] = array('模板','填表说明');
+* $info['set_aligncenter'][0] = array('A1','B1','C1','D1','E1','F1');
+* $info['set_fontcolor'][0] = array('A1','F1');
+* $info['set_BorderStyle'][0] = 'A1:F20';
+* $info['set_width'][0] = array(
+* 'A'=>'20',
+* 'B'=>'20',
+* 'C'=>'20',
+* 'D'=>'20',
+* 'E'=>'20',
+* 'F'=>'20',
+* );
+* 
+* //限制下拉菜单
+* $subject = D('Subject')->getField('name',true);
+* $subject_str = '"'.implode(',',$subject).'"';
+* $section = C('SECTION_TYPE');
+* $section_str = '"'.implode(',',$section).'"';
+* 
+* $new_arr = array();
+* for($i=2;$i<21;$i++){
+* $new_arr1 = array(
+* 'B'.$i=>'"男,女"',
+* 'D'.$i=>'"汉族,蒙古族,回族,藏族,维吾尔族,苗族,彝族,壮族,布依族,朝鲜族,满族,侗族,瑶族,白族,土家族,哈尼族,哈萨克族,傣族,黎族,傈僳族,佤族,畲族,高山族,拉祜族,水族,东乡族,纳西族,景颇族,柯尔克孜族,土族,达斡尔族,仫佬族,羌族,布朗族,撒拉族,毛难族,仡佬族,锡伯族,阿昌族,普米族,塔吉克族,怒族,乌孜别克族,俄罗斯族,鄂温克族,德昂族,保安族,裕固族,京族,塔塔尔族,独龙族,鄂伦春族,赫哲族,门巴族,珞巴族,基诺族,穿青人族,其他,外国血统中国籍人士"',
+* 'F'.$i=>$subject_str,
+* 'E'.$i=>$section_str
+* );
+* $new_arr = array_merge($new_arr,$new_arr1);
+* }
+* $info['set_Validation'][0] = $new_arr;
+* 
+* $data = array(
+* array(
+* 'A1'=>'姓名',
+* 'B1'=>'性别',
+* 'C1'=>'出生日期',
+* 'D1'=>'民族',
+* 'E1'=>'学段',
+* 'F1'=>'科目',
+* ),
+* array(
+* 'A1'=>'1、姓名、科目必填',
+* 'A2'=>'2、出生日期格式为“20080101”',
+* 'A3'=>'3、性别、民族、学段、科目为下拉列表，请不要自行编辑，如果教师有多个科目，请填写一个主要科目，其他科目在系统中自行维护',
+* 'A4'=>'4、文件名教师信息后加学校名称',
+* )
+* );
+* 
+* $filename = C('WEB_SITE_TITLE').'标题';
+* exportExcelFun($filename,$data,$info);
 
-		//限制下拉菜单
-		$subject = D('Subject')->getField('name',true);
-		$subject_str = '"'.implode(',',$subject).'"';
-		$section = C('SECTION_TYPE');
-		$section_str = '"'.implode(',',$section).'"';
-
-		$new_arr = array();
-		for($i=2;$i<21;$i++){
-			$new_arr1 = array(
-				'B'.$i=>'"男,女"',
-				'D'.$i=>'"汉族,蒙古族,回族,藏族,维吾尔族,苗族,彝族,壮族,布依族,朝鲜族,满族,侗族,瑶族,白族,土家族,哈尼族,哈萨克族,傣族,黎族,傈僳族,佤族,畲族,高山族,拉祜族,水族,东乡族,纳西族,景颇族,柯尔克孜族,土族,达斡尔族,仫佬族,羌族,布朗族,撒拉族,毛难族,仡佬族,锡伯族,阿昌族,普米族,塔吉克族,怒族,乌孜别克族,俄罗斯族,鄂温克族,德昂族,保安族,裕固族,京族,塔塔尔族,独龙族,鄂伦春族,赫哲族,门巴族,珞巴族,基诺族,穿青人族,其他,外国血统中国籍人士"',
-				'F'.$i=>$subject_str,
-				'E'.$i=>$section_str
-			);
-			$new_arr = array_merge($new_arr,$new_arr1);
-		}
-		$info['set_Validation'][0] = $new_arr;
-
-		$data = array(
-			array(
-				'A1'=>'姓名',
-				'B1'=>'性别',
-				'C1'=>'出生日期',
-				'D1'=>'民族',
-				'E1'=>'学段',
-				'F1'=>'科目',
-			),
-			array(
-				'A1'=>'1、姓名、科目必填',
-				'A2'=>'2、出生日期格式为“20080101”',
-				'A3'=>'3、性别、民族、学段、科目为下拉列表，请不要自行编辑，如果教师有多个科目，请填写一个主要科目，其他科目在系统中自行维护',
-				'A4'=>'4、文件名教师信息后加学校名称',
-			)
-		);
-
-		$filename = C('WEB_SITE_TITLE').'标题';
-		exportExcelFun($filename,$data,$info);
-
-*/
-
+ */
 
 
 /**
