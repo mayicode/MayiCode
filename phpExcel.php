@@ -251,6 +251,7 @@ function getFile($excel, $filename, $filetype = '')
             $objWriter = \PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
             $objWriter->save('php://output');
     }
+	exit;
 }
 
 /**
