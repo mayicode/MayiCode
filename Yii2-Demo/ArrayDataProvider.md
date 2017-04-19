@@ -1,5 +1,4 @@
-#ArrayDataProvider
-#数据非数据库分页
+##数据非数据库分页
 
 控制器代码
 ```PHP
