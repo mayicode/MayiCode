@@ -5,8 +5,8 @@
 public function actionArrayDataProvider(){
 	$data = [
 		['id' => 1, 'name' => 'name 1','date'=>'2333222'],
-	['id' => 2, 'name' => 'name 2'],
-	['id' => 100, 'name' => 'name 100'],
+		['id' => 2, 'name' => 'name 2'],
+		['id' => 100, 'name' => 'name 100'],
 	];
 
 	$provider = new ArrayDataProvider([
@@ -24,7 +24,7 @@ public function actionArrayDataProvider(){
 	$pages = new Pagination(['totalCount' => count($data),'pageSize'=>2]);
 	//		$rows = $provider->getModels();
 	return $this->render('array-data-provider',['provider'=>$provider,'pages'=>$pages]);
-	}
+}
   ```
   
 前端代码
