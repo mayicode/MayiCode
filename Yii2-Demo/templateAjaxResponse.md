@@ -1,3 +1,5 @@
+#模板内ajax请求
+
 ```php
 $url = Url::to(["broadcast/delete"],true);
 $js = <<<EOT
