@@ -2,7 +2,7 @@
 
 ```php
 $url = Url::to(["broadcast/delete"],true);
-$js = <<<EOT
+$js = <<<JS
     $('a#delete').on('click', function(e) {
        $.ajax({
             url: '$url',
@@ -13,6 +13,6 @@ $js = <<<EOT
             }
         });
     });
-EOT;
+JS;
 $this->registerJs($js);
 ```
