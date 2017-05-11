@@ -7,7 +7,7 @@
 |1|[大量 PHP 框架、库和软件](https://github.com/ziadoz/awesome-php)||
 |2|[免费在线作图](http://processon.com)|Flowchart流程图，BPMN图，Org组织结构图，EVC企业价值链图，EPC事件过程链图等|
 |3|[jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)|jQuery-File-Upload|
-|4|[谷歌浏览器](https://greasyfork.org/zh-CN/scripts)|谷歌浏览器插件|
+|4|[谷歌浏览器](https://greasyfork.org/zh-CN/scripts)|谷歌浏览器插件站|
 
 # PHP Study
 |#|URL|描述|
