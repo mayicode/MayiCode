@@ -94,7 +94,7 @@ function exportExcelFun($file_name,$data,$info = array()){
     }
     Vendor("PHPExcel.PHPExcel");
     $objPHPExcel = new \PHPExcel();
-    $kapu = "青岛伟东云教育发展有限公司";
+    $kapu = "命名";
     $objPHPExcel->getProperties()->setCreator($kapu)
         ->setLastModifiedBy($kapu)
         ->setTitle($kapu)
