@@ -63,6 +63,10 @@ function http_post($url, $param, $post_file = false)
     }
 }
 
+/*
+*
+*发送Post字符串 json对
+*/
 function http_post_data($url, $data_string) {
 
     $curl = curl_init();
