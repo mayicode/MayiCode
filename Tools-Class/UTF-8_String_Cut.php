@@ -30,5 +30,5 @@ public static function truncate_utf8_string($string, $length, $etc = '...')
 		}
 		return $result;
 	}
-
+ 
 ?>
