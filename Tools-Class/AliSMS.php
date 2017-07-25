@@ -96,13 +96,13 @@ class Ali
 
 		$post_data = http_build_query($post_data);
 
-        $rt = curl_do($this->api_url,$post_data,'POST');
+		$rt = curl_do($this->api_url,$post_data,'POST');
 
-        if($rt[0] === 200){
-            return $this->aliqinFcSmsNumSendReurn($rt[1],'');
-        }else{	// 请求对方服务器失败
-            return false;
-        }
+		if($rt[0] === 200){
+		    return $this->aliqinFcSmsNumSendReurn($rt[1],'');
+		}else{	// 请求对方服务器失败
+		    return false;
+		}
 
 	}
 
