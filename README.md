@@ -10,7 +10,7 @@
 |4|[jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)|jQuery-File-Upload|
 |5|[谷歌浏览器](https://greasyfork.org/zh-CN/scripts)|谷歌浏览器插件站|
 |6|[GitHub README语法](https://github.com/guodongxiaren/README)||
-|7|[Cmd Markdown 编辑阅读器](https://www.zybuluo.com/mdeditor)||
+|7|[Cmd Markdown](https://www.zybuluo.com/mdeditor)||Cmd Markdown 编辑阅读器
 
 # PHP Study
 |#|URL|描述|
